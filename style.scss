@@ -1,0 +1,59 @@
+@import 'node_modules/foundation-sites/scss/foundation';
+@include foundation-global-styles;
+@include foundation-grid;
+$grid-row-width: 100em;
+
+
+body {
+    @include grid-row();
+    font-size: 3em;
+
+    h1 {
+        @include grid-column(12);
+        background-color: gray;
+        font-size: 3em;
+        margin: 0px;
+        padding: 10px;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+
+    section.messages {
+        background-color: white;
+
+        ul {
+            list-style: none;
+            padding: 0px;
+
+            li {
+                @include grid-column(12);
+                background-color: white;
+
+                div.chats {
+                    width: 80%;
+                    background-color: lightblue;
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+
+    section.mouth {
+        @include grid-column(12);
+        background-color: gray;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        padding: 50px;
+    }
+
+}
+
+body section.messages ul li:last-child:not(:first-child) {
+    margin-bottom: 220px;
+}
+
+body section.messages ul li:first-child {
+    margin-top: 180px;
+}

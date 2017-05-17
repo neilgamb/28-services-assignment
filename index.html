@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="moment.js"></script>
+    <link rel="stylesheet" href='style.css'>
+</head>
+
+<body ng-app="ChatApp">
+
+    <h1>chirp</h1>
+
+    <main>
+
+        <section class="messages" ng-controller="MessagesController">
+            <ul>
+                <li ng-repeat="msg in conversation">
+                    <div class="chats">
+                        <p>{{ msg.from }}</p>
+                        <p>{{ msg.content }}</p>
+                        <p>{{ msg.time }}</p>
+                    </div>
+                </li>
+            </ul>
+
+        <section class="mouth" ng-controller="InputController">
+                NAME: <input id="name"type="text" name="name"><br></input>
+                MESSAGE: <input id="msg" type="text" name="message"></input>
+                <button ng-click="send(msg)">Send</button>
+        </section>
+
+    </main>
+</body>
+<html>
